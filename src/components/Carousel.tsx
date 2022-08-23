@@ -36,7 +36,7 @@ export default function Carousel() {
   }, [ads]);
 
   return (
-    <div className="w-full select-none relative my-10">
+    <div className="w-full select-none relative">
       <div className="aspect-w-16 aspect-h-9">
         <img src={ads[index]} alt="adImage" />
       </div>
