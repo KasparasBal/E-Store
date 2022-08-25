@@ -1,4 +1,4 @@
-export default function InformationLine() {
+const InformationLine: React.FC = () => {
   return (
     <div className="w-full h-15 p-2 bg-pink-500 flex justify-center flex-col items-center">
       <h1 className="text-white text-2xl">
@@ -7,4 +7,6 @@ export default function InformationLine() {
       <h2 className="text-white text-xl">Till August 31!</h2>
     </div>
   );
-}
+};
+
+export default InformationLine;

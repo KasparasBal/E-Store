@@ -1,6 +1,6 @@
 import AboutVid from "../components/AboutVId";
 
-export default function About() {
+const About: React.FC = () => {
   return (
     <>
       <div className="container mx-auto relative">
@@ -23,4 +23,6 @@ export default function About() {
       </div>
     </>
   );
-}
+};
+
+export default About;

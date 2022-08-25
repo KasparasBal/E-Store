@@ -3,7 +3,7 @@ import CartLogo from "../assets/Cart";
 
 import Logo from "../assets/Logo.png";
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-white shadow-sm p-2 flex items-center justify-between">
       <Link to="/">
@@ -17,10 +17,16 @@ export default function Navbar() {
           Home
         </Link>
         <Link
-          to="/store"
+          to="/womans"
           className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium"
         >
-          Store
+          Woman's Clothing
+        </Link>
+        <Link
+          to="/mens"
+          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium"
+        >
+          Men's Clothing
         </Link>
         <Link
           to="/about"
@@ -40,4 +46,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

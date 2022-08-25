@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import InformationLine from "../components/InformationLine";
 import InformationLine2 from "../components/InformationLine2";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div>
       <InformationLine />
@@ -14,4 +14,6 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;

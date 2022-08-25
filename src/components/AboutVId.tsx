@@ -1,5 +1,7 @@
 import video from "../assets/video.mp4";
 
-export default function AboutVid() {
+const AboutVid: React.FC = () => {
   return <video src={video} autoPlay loop />;
-}
+};
+
+export default AboutVid;

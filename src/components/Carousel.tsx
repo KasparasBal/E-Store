@@ -8,7 +8,7 @@ import forthImg from "../assets/06.png";
 import LArrow from "../assets/LArrow";
 import RArrow from "../assets/RArrow";
 
-export default function Carousel() {
+const Carousel: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   const interval: number = 5000;
@@ -51,4 +51,6 @@ export default function Carousel() {
       </div>
     </div>
   );
-}
+};
+
+export default Carousel;
