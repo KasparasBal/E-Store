@@ -1,5 +1,5 @@
-const CURRENCY_FORMATTER = new Intl.NumberFormat("lt-LT", {
-  currency: "EUR",
+const CURRENCY_FORMATTER = new Intl.NumberFormat("en-US", {
+  currency: "USD",
   style: "currency",
 });
 
