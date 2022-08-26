@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Model from "../utilities/model";
+import Types from "../utilities/types";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState<Model[]>([]);
+  const [data, setData] = useState<Types>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -26,6 +26,7 @@ const useFetch = (url: string) => {
         setData(data);
         setLoading(false);
         setError(null);
+        console.log(data);
       })
       .catch((err) => {
         setLoading(false);

@@ -11,6 +11,7 @@ const Home: React.FC = () => {
         <Carousel />
       </div>
       <InformationLine2 />
+
       <Footer />
     </div>
   );

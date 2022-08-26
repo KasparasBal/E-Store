@@ -12,16 +12,11 @@ const Navbar: React.FC = () => {
       <div id="links" className="flex items-center ">
         <Link
           to="/"
-          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium"
+          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium relative"
         >
           Home
         </Link>
-        <Link
-          to="/womans"
-          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium"
-        >
-          Woman's Clothing
-        </Link>
+
         <Link
           to="/mens"
           className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium"

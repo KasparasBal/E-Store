@@ -1,30 +1,29 @@
-import { useState, useEffect } from "react";
-import Model from "../utilities/model";
+import Types from "../utilities/types";
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
 
 const Mens: React.FC = () => {
   const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products/category/men's clothing"
+    "https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&currency=USD&sizeChema=US&lang=en-US"
   );
+
   return (
-    <div className="grid grid-cols-4 gap-4 p-10">
+    <div className="flex flex-wrap gap-10 justify-center items-center p-10">
       {loading && "...loading"}
       {data &&
-        data.map((item: Model, id: number) => {
+        data.products &&
+        data.products.map((item) => {
           return (
-            <div key={id}>
-              <div>
-                <Card
-                  category={item.category}
-                  description={item.description}
-                  id={item.id}
-                  image={item.image}
-                  price={item.price}
-                  rating={item.rating}
-                  title={item.title}
-                />
-              </div>
+            <div>
+              <Card
+                name={item.name}
+                id={item.id}
+                brandName={item.brandName}
+                colour={item.colour}
+                imageUrl={item.imageUrl}
+                isSellingFast={item.isSellingFast}
+                price={item.price}
+              />
             </div>
           );
         })}

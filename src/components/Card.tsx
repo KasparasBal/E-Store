@@ -1,32 +1,35 @@
 import Rating from "../utilities/rating";
 import formatCurrency from "../utilities/formatCurrency";
+import Price from "../utilities/price";
 
 interface Props {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string | undefined;
-  rating: Rating;
+  id: number | undefined;
+  name: string | undefined;
+  price: Price | undefined;
+  colour: string | undefined;
+  brandName: string | undefined;
+  imageUrl: string | undefined;
+  isSellingFast: boolean | undefined;
 }
 
 const Card: React.FC<Props> = ({
-  title,
+  name,
   price,
-  description,
-  category,
-  image,
-  rating,
+  colour,
+  brandName,
+  imageUrl,
+  isSellingFast,
 }) => {
   return (
-    <div className=" flex items-center justify-center flex-col  max-w-xs h-80 p-2 shadow-md shadow-neutral-200">
-      <img className="w-3/6 max-h-auto" src={image} />
-      <h1 className="text-md text-center">{title}</h1>
-      <h2 className="font-bold text-xl text-neutral-500">
-        {formatCurrency(price)}
-      </h2>
-    </div>
+    <>
+      <img className="w-64 max-h-auto" src={`https://${imageUrl}`} />
+      <div className=" flex items-center justify-center flex-col  w-64  p-2 shadow-md shadow-neutral-200">
+        <h1 className="text-md text-center">{name}</h1>
+        <h2 className="font-bold text-xl text-neutral-500">
+          {price && formatCurrency(Number(price.current.value))}
+        </h2>
+      </div>
+    </>
   );
 };
 
