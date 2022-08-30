@@ -1,6 +1,6 @@
 import Rating from "../utilities/rating";
 import formatCurrency from "../utilities/formatCurrency";
-import Price from "../utilities/price";
+import Price from "../types/Products/price";
 
 interface Props {
   id: number | undefined;

@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <InformationLine />
-      <div className="container mx-auto flex justify-center items-center p-2">
+      <div className=" container mx-auto flex justify-center items-center p-2">
         <Carousel />
       </div>
       <InformationLine2 />

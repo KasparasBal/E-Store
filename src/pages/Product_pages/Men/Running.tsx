@@ -1,20 +1,21 @@
 import { useState } from "react";
 
-import Types from "../utilities/types";
-import useFetch from "../hooks/useFetch";
-import Card from "../components/Card";
+import Types from "../../../types/Products/types";
+import useFetch from "../../../hooks/productFetch";
+import Card from "../../../components/Card";
+import gif from "../../../assets/loading_gif.gif";
 
-const Mens: React.FC = () => {
+const Running: React.FC = () => {
   const [limit, setLimit] = useState<number>(10);
 
   const store: string = "US";
   const offset: number = 0;
-  const categoryId: number = 4209;
+  const categoryId: number = 27191;
   const country: string = "US";
   const currency: string = "USD";
   const sizeSchema: string = "US";
   const language: string = "en-US";
-  let thing: number = 0;
+
   const handleLimit = () => {
     setLimit(limit + 10);
   };
@@ -24,9 +25,9 @@ const Mens: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center z-50">
       <div className="flex flex-wrap gap-10 justify-center items-center p-10">
-        {loading && "...loading"}
+        {loading && <img className="w-20 h-auto" src={gif} alt="gif" />}
         {data &&
           data.products &&
           data.products.map((item) => {
@@ -57,4 +58,4 @@ const Mens: React.FC = () => {
   );
 };
 
-export default Mens;
+export default Running;

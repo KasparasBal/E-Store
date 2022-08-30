@@ -37,7 +37,7 @@ const Carousel: React.FC = () => {
   }, [ads]);
 
   return (
-    <div className="w-10/12 select-none relative my-2">
+    <div className="w-10/12 select-none relative my-2 -z-50 ">
       <div className="aspect-w-16 aspect-h-9">
         <img className="w-full h-full" src={ads[index]} alt="adImage" />
       </div>

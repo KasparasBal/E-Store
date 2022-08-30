@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Types from "../utilities/types";
+import Categories from "../types/Categories/Categories";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState<Types>();
+  const [data, setData] = useState<Categories>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,7 +10,7 @@ const useFetch = (url: string) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "6ffb9c2e67msh6b6620b0f9935d2p1f842ejsn8eb88b02aa99",
+        "X-RapidAPI-Key": "58a50b31e0msh499bba0c6ab8df8p116ce9jsn424d8d824dcd",
         "X-RapidAPI-Host": "asos2.p.rapidapi.com",
       },
     };
@@ -27,7 +27,6 @@ const useFetch = (url: string) => {
         setLoading(false);
         setError(null);
         console.log(data);
-        console.log(" i ran");
       })
       .catch((err) => {
         setLoading(false);
