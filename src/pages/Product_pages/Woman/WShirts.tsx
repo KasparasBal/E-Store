@@ -3,14 +3,13 @@ import { useState } from "react";
 import Types from "../../../types/Products/types";
 import useFetch from "../../../hooks/productFetch";
 import Card from "../../../components/Card";
-import gif from "../assets/loading_gif.gif";
-
-const ProductList: React.FC = () => {
+import gif from "../../../assets/loading_gif.gif";
+const WShirts: React.FC = () => {
   const [limit, setLimit] = useState<number>(10);
 
   const store: string = "US";
   const offset: number = 0;
-  const categoryId: number = 9265;
+  const categoryId: number = 15200;
   const country: string = "US";
   const currency: string = "USD";
   const sizeSchema: string = "US";
@@ -58,4 +57,4 @@ const ProductList: React.FC = () => {
   );
 };
 
-export default ProductList;
+export default WShirts;

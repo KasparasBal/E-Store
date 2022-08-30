@@ -163,13 +163,13 @@ const Menu: React.FC = () => {
             <ul className="flex justify-start items-start flex-col ">
               <Link
                 className="p-2 transition ease-in-out hover:font-bold  hover:scale-110  duration-300"
-                to="#"
+                to="/w-sneakers"
               >
                 Sneakers
               </Link>
               <Link
                 className="p-2 transition ease-in-out hover:font-bold  hover:scale-110  duration-300"
-                to="#"
+                to="/w-boots"
               >
                 Boots
               </Link>
@@ -193,19 +193,19 @@ const Menu: React.FC = () => {
               </Link>
               <Link
                 className="p-2 transition ease-in-out hover:font-bold  hover:scale-110  duration-300"
-                to="/w-yoganstudio"
+                to="/w-yoga-studio"
               >
                 Yoga & Studio
               </Link>
               <Link
                 className="p-2 transition ease-in-out hover:font-bold  hover:scale-110  duration-300"
-                to="/w-gymntraining"
+                to="/w-gym-training"
               >
                 Gym & Training
               </Link>
               <Link
                 className="p-2 transition ease-in-out hover:font-bold  hover:scale-110  duration-300"
-                to="/w-swimwearnbeachwear"
+                to="/w-swimwear-beachwear"
               >
                 Swimwear & Beachwear
               </Link>
