@@ -7,11 +7,11 @@ import WomenMenu from "./WomenMenu";
 
 const Navbar: React.FC = () => {
   const [womanMenuVisibility, setWomanMenuVisibility] = useState<string>(
-    "opacity-0 absolute pointer-events-none"
+    "absolute  right-0  top-full bg-white p-2 rounded-sm shadow-lg shadow-neutral-500 opacity-0 transition-opacity duration-150 transform duration-150ms ease-in-out  pointer-events-none "
   );
 
   const [manMenuVisibility, setManMenuVisibility] = useState<string>(
-    "opacity-0 absolute pointer-events-none"
+    "absolute  right-0  top-full bg-white p-2 rounded-sm shadow-lg shadow-neutral-500 opacity-0 transition-opacity duration-150 transform duration-150ms ease-in-out  pointer-events-none "
   );
 
   //Expanding Menu Class Presets
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm p-2 flex items-center justify-between sticky top-0">
+    <nav className="bg-white shadow-sm p-2 flex items-center justify-between sticky top-0 z-50">
       <Link to="/">
         <img src={Logo} alt="logo" className="w-8 " />
       </Link>
@@ -85,19 +85,6 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <Link
-          to="/brands"
-          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium relative hover:text-pink-600"
-        >
-          Brands
-        </Link>
-        <Link
-          to="/categories"
-          className="p-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200 hover:font-medium relative hover:text-pink-600"
-        >
-          Categories
-        </Link>
 
         <Link
           to="/about"

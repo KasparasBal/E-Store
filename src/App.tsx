@@ -3,9 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-import Brands from "./pages/Brands";
-import Categories from "./pages/Categories";
-
 //Men
 
 import Shirts from "./pages/Product_pages/Men/Shirts";
@@ -33,7 +30,7 @@ import LifeStyle from "./pages/Product_pages/Men/LifeStyle";
 import ActiveWear from "./pages/Product_pages/Men/ActiveWear";
 
 //Women
-import WShirts from "./pages/Product_pages/Woman/wShirts";
+import WShirts from "./pages/Product_pages/Woman/WShirts";
 import CropTops from "./pages/Product_pages/Woman/CropTops";
 import PantsLeggings from "./pages/Product_pages/Woman/PantsLeggings";
 import WJeans from "./pages/Product_pages/Woman/WJeans";
@@ -60,13 +57,17 @@ import WOutdoors from "./pages/Product_pages/Woman/WOutdoors";
 import YogaStudio from "./pages/Product_pages/Woman/YogaStudio";
 import WGymTraining from "./pages/Product_pages/Woman/WGymTraining";
 import SwimwearBeachWear from "./pages/Product_pages/Woman/SwimwearBeachWear";
+import ProductDetail from "./pages/ProductDetail";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <div>
+    <CartProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="productDetail/:id" element={<ProductDetail />} />
 
         <Route path="/m-shirts" element={<Shirts />} />
         <Route path="/m-tshirts-tanks" element={<TshirtsnTanks />} />
@@ -112,7 +113,8 @@ function App() {
         <Route path="/w-backpacks" element={<WBackpacks />} />
         <Route path="/w-sunglasses" element={<Sunglasses />} />
         <Route path="/w-hats" element={<WHats />} />
-        <Route path="/w-bracelets" element={<Earrings />} />
+        <Route path="/w-bracelets" element={<Bracelets />} />
+        <Route path="/w-earrings" element={<Earrings />} />
         <Route path="/w-necklaces" element={<Necklaces />} />
         <Route path="/w-rings" element={<Rings />} />
         <Route path="/w-sneakers" element={<WSneakers />} />
@@ -123,11 +125,9 @@ function App() {
         <Route path="/w-gym-training" element={<WGymTraining />} />
         <Route path="/w-swimwear-beachwear" element={<SwimwearBeachWear />} />
 
-        <Route path="/brands" element={<Brands />} />
-        <Route path="/categories" element={<Categories />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </div>
+    </CartProvider>
   );
 }
 

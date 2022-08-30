@@ -37,11 +37,11 @@ const Carousel: React.FC = () => {
   }, [ads]);
 
   return (
-    <div className="w-10/12 select-none relative my-2 -z-50 ">
+    <div className="w-10/12 select-none relative my-2 -z-49 ">
       <div className="aspect-w-16 aspect-h-9">
         <img className="w-full h-full" src={ads[index]} alt="adImage" />
       </div>
-      <div className="absolute h-full top-1/2 tranform -translate-y-1/2 px-3 flex justify-between w-full opacity-0 hover:opacity-100 transition-opacity">
+      <div className="absolute h-full top-1/2 tranform -translate-y-1/2 px-3 flex justify-between w-full opacity-0 hover:cursor-pointer hover:opacity-100 transition-opacity z-2">
         <button onClick={handlePrev}>
           <LArrow />
         </button>

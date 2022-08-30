@@ -1,0 +1,41 @@
+import Price from "../Products/price";
+import Brand from "./Brand";
+import Info from "./Info";
+import LocalData from "./LocalData";
+import Media from "./Media";
+import Names from "./Names";
+import PlpIds from "./PlpIds";
+import ProductType from "./ProductType";
+import Variants from "./Variants";
+import WebCategories from "./WebCategories";
+
+export default interface Details {
+  id: number;
+  name: string;
+  description: string;
+  alternateNames: Names[];
+  localisedData: LocalData[];
+  gender: string;
+  productCode: string;
+  pdpLayout: string;
+  brand: Brand;
+  sizeGuide: string | null;
+  sizeGuideApiUrl: string | null;
+  isNoSize: boolean;
+  isOneSize: boolean;
+  isInStock: boolean;
+  countryOfManufacture: string | null;
+  hasVariantsWithProp65Risk: boolean;
+  webCategories: WebCategories[];
+  variants: Variants[];
+  media: Media;
+  badges: string[];
+  info: Info;
+  shippingRestriction: null;
+  price: Price;
+  isDeadProduct: boolean;
+  rating: number | null;
+  productType: ProductType;
+  plpIds: PlpIds[];
+  baseUrl: string;
+}

@@ -1,6 +1,6 @@
-import Rating from "../utilities/rating";
 import formatCurrency from "../utilities/formatCurrency";
 import Price from "../types/Products/price";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: number | undefined;
@@ -13,6 +13,7 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({
+  id,
   name,
   price,
   colour,
@@ -21,7 +22,7 @@ const Card: React.FC<Props> = ({
   isSellingFast,
 }) => {
   return (
-    <>
+    <Link to={`/productDetail/${id}`}>
       <img className="w-64 max-h-auto" src={`https://${imageUrl}`} />
       <div className=" flex items-center justify-center flex-col  w-64  p-2 shadow-md shadow-neutral-200">
         <h1 className="text-md text-center">{name}</h1>
@@ -29,7 +30,7 @@ const Card: React.FC<Props> = ({
           {price && formatCurrency(Number(price.current.value))}
         </h2>
       </div>
-    </>
+    </Link>
   );
 };
 

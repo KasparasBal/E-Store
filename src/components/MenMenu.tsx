@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import useFetch from "../hooks/categoryFetch";
 
 const Menu: React.FC = () => {
   return (
