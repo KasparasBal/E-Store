@@ -58,11 +58,10 @@ import YogaStudio from "./pages/Product_pages/Woman/YogaStudio";
 import WGymTraining from "./pages/Product_pages/Woman/WGymTraining";
 import SwimwearBeachWear from "./pages/Product_pages/Woman/SwimwearBeachWear";
 import ProductDetail from "./pages/ProductDetail";
-import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <CartProvider>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -127,7 +126,7 @@ function App() {
 
         <Route path="/about" element={<About />} />
       </Routes>
-    </CartProvider>
+    </>
   );
 }
 

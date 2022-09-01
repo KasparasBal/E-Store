@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
 import useFetch from "../hooks/detailFetch.ts";
 import gif from "../assets/loading_gif.gif";
 import { useParams } from "react-router-dom";
@@ -15,6 +16,7 @@ const ProductDetail: React.FC = () => {
   );
 
   const arr: Images[] = [];
+  let quantity: number = 0;
 
   return (
     <div className=" container mx-auto my-10  shadow-md shadow-neutral-200 grid grid-cols-2">

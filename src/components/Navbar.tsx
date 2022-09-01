@@ -4,6 +4,7 @@ import CartLogo from "../assets/Cart";
 import Logo from "../assets/Logo.png";
 import MenMenu from "./MenMenu";
 import WomenMenu from "./WomenMenu";
+import SearchBar from "./SearchBar";
 
 const Navbar: React.FC = () => {
   const [womanMenuVisibility, setWomanMenuVisibility] = useState<string>(
@@ -50,6 +51,9 @@ const Navbar: React.FC = () => {
       <Link to="/">
         <img src={Logo} alt="logo" className="w-8 " />
       </Link>
+      <div className="w-3/6">
+        <SearchBar />
+      </div>
       <div id="links" className="flex items-center ">
         <Link
           to="/"
@@ -94,6 +98,9 @@ const Navbar: React.FC = () => {
         </Link>
         <span className="text-white bg-pink-400 hover:bg-pink-600 rounded-l-lg cursor-pointer p-2 transition ease-in-out delay-100   duration-200 absolute right-0 top-20 shadow-sm shadow-gray-700">
           <CartLogo />
+          <span className="absolute -bottom-2 -left-3 bg-red-500 p-2 rounded-full text-sm h-6 flex items-center justify-center shadow-sm shadow-gray-700">
+            1
+          </span>
         </span>
       </div>
     </nav>
