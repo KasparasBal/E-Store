@@ -29,6 +29,10 @@
 - The API is massive, so only a portion of the data is used. But all the types for these end points are declared: 
   - categories/list
   - products/v2/list
+  
+-About Asos API
+![image](https://user-images.githubusercontent.com/98013126/187866545-119a619a-f0ad-4316-bc70-ae51609b5cf2.png)
+
 
 
 
