@@ -27,7 +27,7 @@ const ImageSlider: React.FC<Props> = ({ img }) => {
   }
 
   return (
-    <div className="w-12/12 select-none relative my-2 -z-49 ">
+    <div className="w-12/12 select-none relative my-2 z-10 ">
       <div className="aspect-w-16 aspect-h-9">
         <img
           className="w-full h-full"

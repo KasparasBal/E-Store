@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 
-import useFetch from "../hooks/detailFetch.ts";
+import useFetch from "../hooks/detailFetch";
 import gif from "../assets/loading_gif.gif";
 import { useParams } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
@@ -16,13 +16,12 @@ const ProductDetail: React.FC = () => {
   );
 
   const arr: Images[] = [];
-  let quantity: number = 0;
 
   return (
     <div className=" container mx-auto my-10  shadow-md shadow-neutral-200 grid grid-cols-2">
       <div className="col-span-1">{data && <ImageSlider img={arr} />}</div>
+      {loading && <img className="w-20 h-auto" src={gif} alt="gif" />}
       <div className="flex justify-center items-center col-span-1">
-        {loading && <img className="w-20 h-auto" src={gif} alt="gif" />}
         {/* Get Images and push them into  an array */}
         {data &&
           data.media &&
@@ -36,6 +35,8 @@ const ProductDetail: React.FC = () => {
             name={data.name}
             gender={data.gender}
             variants={data.variants}
+            id={data.id}
+            images={arr}
           />
         )}
       </div>

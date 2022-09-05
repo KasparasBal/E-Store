@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import gif from "../assets/loading_gif.gif";
+import Card from "../components/Card";
+import useFetch from "../hooks/productFetch";
 
-import Types from "../../../types/Products/types";
-import useFetch from "../../../hooks/productFetch";
-import Card from "../../../components/Card";
-import gif from "../../../assets/loading_gif.gif";
-
-const Bags: React.FC = () => {
+const ProductPage: React.FC = () => {
   const [limit, setLimit] = useState<number>(10);
 
   const store: string = "US";
   const offset: number = 0;
-  const categoryId: number = 9265;
   const country: string = "US";
   const currency: string = "USD";
   const sizeSchema: string = "US";
@@ -20,8 +18,14 @@ const Bags: React.FC = () => {
     setLimit(limit + 10);
   };
 
+  //Getting the search query string
+
+  const search = useLocation().search;
+  const q = new URLSearchParams(search).get("q");
+  const resNum = new URLSearchParams(search).get("resNum");
+
   const { data, loading, error } = useFetch(
-    `https://asos2.p.rapidapi.com/products/v2/list?store=${store}&offset=${offset}&categoryId=${categoryId}&limit=${limit}&country=${country}&currency=${currency}&sizeChema=${sizeSchema}&lang=${language}`
+    `https://asos2.p.rapidapi.com/products/v2/list?store=${store}&offset=${offset}&q=${q}&limit=${limit}&country=${country}&currency=${currency}&sizeChema=${sizeSchema}&lang=${language}`
   );
 
   return (
@@ -46,7 +50,7 @@ const Bags: React.FC = () => {
             );
           })}
       </div>
-      {data && limit <= 48 && (
+      {data && data.products && data.products.length < 48 && (
         <button
           onClick={handleLimit}
           className="bg-pink-500 p-2 mb-10 rounded-md text-white cursor-pointer hover:bg-pink-600"
@@ -58,4 +62,4 @@ const Bags: React.FC = () => {
   );
 };
 
-export default Bags;
+export default ProductPage;

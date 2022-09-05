@@ -1,16 +1,52 @@
 import formatCurrency from "../utilities/formatCurrency";
-import { Link } from "react-router-dom";
-import Current from "../types/Details/VariantCPRX";
 import Variants from "../types/Details/Variants";
+import { useShoppingCart } from "../context/cartContext";
+import Images from "../types/Details/Images";
 
 interface Props {
   name: string;
   price: number | null | undefined;
   gender: string;
   variants: Variants[];
+  id: number;
+  images: Images[];
 }
 
-const SidePanel: React.FC<Props> = ({ name, price, gender, variants }) => {
+type CartItem = {
+  id: number;
+  quantity: number;
+  name: string;
+  price: number | null | undefined;
+  image: string;
+};
+
+const SidePanel: React.FC<Props> = ({
+  name,
+  price,
+  gender,
+  variants,
+  id,
+  images,
+}) => {
+  const { cartItems, setCartItems, increaseItemQuantity } = useShoppingCart();
+  const image = images[0].url;
+  const cartItem: CartItem = {
+    id,
+    quantity: 1,
+    name,
+    image,
+    price,
+  };
+
+  const newCartItems = [...cartItems, cartItem];
+
+  const increaseHandler = () => {
+    if (cartItems.find((item) => item.id === id)) {
+      return increaseItemQuantity(id);
+    }
+    setCartItems(newCartItems);
+  };
+
   return (
     <div className=" flex  flex-col gap-10 p-10">
       <div>
@@ -30,7 +66,10 @@ const SidePanel: React.FC<Props> = ({ name, price, gender, variants }) => {
             variants.map((item) => <option>{item.brandSize}</option>)}
         </select>
       </div>
-      <button className="bg-pink-400 text-white hover:bg-pink-600  p-2 rounded-md  transition duration-150 ">
+      <button
+        onClick={increaseHandler}
+        className="bg-pink-400 text-white hover:bg-pink-600  p-2 rounded-md  transition duration-150 "
+      >
         Add To Cart
       </button>
     </div>

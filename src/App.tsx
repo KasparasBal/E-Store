@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
@@ -58,6 +58,7 @@ import YogaStudio from "./pages/Product_pages/Woman/YogaStudio";
 import WGymTraining from "./pages/Product_pages/Woman/WGymTraining";
 import SwimwearBeachWear from "./pages/Product_pages/Woman/SwimwearBeachWear";
 import ProductDetail from "./pages/ProductDetail";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
 
         <Route path="productDetail/:id" element={<ProductDetail />} />
 
+        <Route path={`/product`} element={<ProductPage />} />
         <Route path="/m-shirts" element={<Shirts />} />
         <Route path="/m-tshirts-tanks" element={<TshirtsnTanks />} />
         <Route path="/m-pants-chinos" element={<PantsnChinosS />} />

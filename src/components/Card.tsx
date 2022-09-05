@@ -24,7 +24,7 @@ const Card: React.FC<Props> = ({
   return (
     <Link to={`/productDetail/${id}`}>
       <img className="w-64 max-h-auto" src={`https://${imageUrl}`} />
-      <div className=" flex items-center justify-center flex-col  w-64  p-2 shadow-md shadow-neutral-200">
+      <div className=" flex items-center justify-center flex-col h-40  w-64  p-2 shadow-md shadow-neutral-200">
         <h1 className="text-md text-center">{name}</h1>
         <h2 className="font-bold text-xl text-neutral-500">
           {price && formatCurrency(Number(price.current.value))}

@@ -10,7 +10,7 @@ const useFetch = (url: string) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "8d04e55021mshc75aa27c9f541a5p162222jsn84d23436fdc3",
+        "X-RapidAPI-Key": "7a110d67a8msha01440dfac91c40p193a7cjsnd7e4757297fc",
         "X-RapidAPI-Host": "asos2.p.rapidapi.com",
       },
     };
