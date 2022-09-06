@@ -68,7 +68,7 @@ const SidePanel: React.FC<Props> = ({
       </div>
       <button
         onClick={increaseHandler}
-        className="bg-pink-400 text-white hover:bg-pink-600  p-2 rounded-md  transition duration-150 "
+        className="bg-pink-500 text-white hover:bg-pink-600  p-2 rounded-md  transition duration-150 "
       >
         Add To Cart
       </button>
