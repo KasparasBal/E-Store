@@ -14,6 +14,7 @@ type ShoppingCartProviderProps = {
 type ShoppingCartContext = {
   increaseItemQuantity: (id: number) => void;
   decreaseItemQuantity: (id: number) => void;
+  removeFromCart: (id: number) => void;
   cartQuantity: number;
   cartItems: CartItem[];
   setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
@@ -78,6 +79,12 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     });
   }
 
+  function removeFromCart(id: number) {
+    setCartItems((currItems) => {
+      return currItems.filter((item) => item.id !== id);
+    });
+  }
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -86,6 +93,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         cartQuantity,
         increaseItemQuantity,
         decreaseItemQuantity,
+        removeFromCart,
       }}
     >
       {children}
